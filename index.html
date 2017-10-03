@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Titulo del documento</title>
+    <style>
+        #contenedor {
+            display: flex;
+            flex-direction: row-reverse;
+            background-color: #cccccc;
+            border: 5px solid #cccccc;
+            width: 1000px;
+        }
+        
+        #contenedor div {
+            /* flex-basis: 200px; */
+            height: 200px;
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        
+        #contenedor div:nth-child(1) {
+            background-color: grey;
+        }
+        
+        #contenedor div:nth-child(2) {
+            background-color: red;
+            animation-name: movete;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes movete {
+            from {
+                height: 200px
+            }
+            50% {
+                height: 400px
+            }
+            to {
+                height: 200px
+            }
+        }
+        
+        #contenedor div:nth-child(3) {
+            background: radial-gradient(circle, blue, yellow);
+            flex-grow: 2;
+            transition: height 2s;
+        }
+        
+        #contenedor div:nth-child(3):hover {
+            height: 300px;
+        }
+        
+        #contenedor div:nth-child(4) {
+            background-color: yellow;
+            transition: background-color 2s;
+        }
+        
+        #contenedor div:nth-child(4):hover {
+            background-color: brown;
+        }
+        
+        #contenedor div:nth-child(5) {
+            background-color: green;
+            transition: flex-basis 2s;
+        }
+        
+        #contenedor div:nth-child(5):hover {
+            flex-basis: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
